@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#app {
+    width: 100%;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#document-list {
+    margin-bottom: 20px;
+}
+
+#documents {
+    list-style-type: none;
+    padding: 0;
+}
+
+#documents li {
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px 0;
+    background-color: #f0f0f0;
+}
+
+#editor {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#document-title {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#toolbar {
+    margin-bottom: 10px;
+}
+
+#toolbar button {
+    margin-right: 5px;
+}
+
+#content {
+    border: 1px solid #ddd;
+    min-height: 200px;
+    padding: 10px;
+}
+
+button {
+    cursor: pointer;
+    padding: 5px 10px;
+}

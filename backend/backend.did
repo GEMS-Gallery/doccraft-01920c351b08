@@ -1,0 +1,14 @@
+type Document = 
+ record {
+   content: text;
+   id: nat;
+   lastModified: int;
+   title: text;
+ };
+service : {
+  createDocument: (text, text) -> (nat);
+  deleteDocument: (nat) -> (bool);
+  getDocument: (nat) -> (opt Document) query;
+  listDocuments: () -> (vec Document) query;
+  updateDocument: (nat, text, text) -> (bool);
+}

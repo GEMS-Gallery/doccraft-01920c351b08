@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Document Application</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Word Document Application</h1>
+        <div id="document-list">
+            <h2>Documents</h2>
+            <ul id="documents"></ul>
+            <button id="new-document">New Document</button>
+        </div>
+        <div id="editor">
+            <input type="text" id="document-title" placeholder="Document Title">
+            <div id="toolbar">
+                <button data-command="bold">B</button>
+                <button data-command="italic">I</button>
+                <button data-command="underline">U</button>
+            </div>
+            <div id="content" contenteditable="true"></div>
+            <button id="save-document">Save</button>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
