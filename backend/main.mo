@@ -1,7 +1,6 @@
 import Bool "mo:base/Bool";
 import Hash "mo:base/Hash";
 import Int "mo:base/Int";
-import List "mo:base/List";
 
 import Array "mo:base/Array";
 import HashMap "mo:base/HashMap";
@@ -12,7 +11,6 @@ import Text "mo:base/Text";
 import Time "mo:base/Time";
 
 actor WordDocument {
-    // Document type
     public type Document = {
         id: Nat;
         title: Text;
@@ -32,7 +30,6 @@ actor WordDocument {
         documents := HashMap.fromIter<Nat, Document>(documentsEntries.vals(), 1, Nat.equal, Nat.hash);
     };
 
-    // Create a new document
     public func createDocument(title: Text, content: Text) : async Nat {
         let id = nextId;
         nextId += 1;
@@ -46,12 +43,10 @@ actor WordDocument {
         id
     };
 
-    // Get a document by id
     public query func getDocument(id: Nat) : async ?Document {
         documents.get(id)
     };
 
-    // Update a document
     public func updateDocument(id: Nat, title: Text, content: Text) : async Bool {
         switch (documents.get(id)) {
             case (null) { false };
@@ -68,7 +63,6 @@ actor WordDocument {
         }
     };
 
-    // Delete a document
     public func deleteDocument(id: Nat) : async Bool {
         switch (documents.remove(id)) {
             case (null) { false };
@@ -76,7 +70,6 @@ actor WordDocument {
         }
     };
 
-    // List all documents
     public query func listDocuments() : async [Document] {
         Iter.toArray(documents.vals())
     };
